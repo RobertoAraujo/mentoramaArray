@@ -1,9 +1,9 @@
 package br.gov.ac.sefaz.App;
 
-import br.gov.ac.sefaz.banco.ContaCorrente;
-import br.gov.ac.sefaz.banco.ContaSalario;
-import br.gov.ac.sefaz.banco.PessoaFisca;
-import br.gov.ac.sefaz.banco.PessoaJuridica;
+import br.gov.ac.sefaz.cliente.PessoaFisca;
+import br.gov.ac.sefaz.cliente.PessoaJuridica;
+import br.gov.ac.sefaz.conta.ContaCorrente;
+import br.gov.ac.sefaz.conta.ContaSalario;
 
 public class ContaApp {
 

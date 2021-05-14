@@ -1,4 +1,4 @@
-package br.gov.ac.sefaz.banco;
+package br.gov.ac.sefaz.conta;
 
 import java.util.Objects;
 

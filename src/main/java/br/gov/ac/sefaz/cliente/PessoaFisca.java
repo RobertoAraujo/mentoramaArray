@@ -1,4 +1,4 @@
-package br.gov.ac.sefaz.banco;
+package br.gov.ac.sefaz.cliente;
 
 import java.util.Objects;
 

@@ -2,16 +2,13 @@ package br.gov.ac.sefaz.App;
 
 import java.util.Scanner;
 
+import br.gov.ac.sefaz.cliente.Pessoa;
 import br.gov.ac.sefaz.cliente.PessoaFisca;
-import br.gov.ac.sefaz.cliente.PessoaJuridica;
-import br.gov.ac.sefaz.conta.ContaCorrente;
 import br.gov.ac.sefaz.conta.ContaSalario;
 
 public class ContaScannerApp {
 	public static void main(String[] args) {
 		PessoaFisca pessoaF = new PessoaFisca();
-		PessoaJuridica pessoaJ = new PessoaJuridica();
-		ContaCorrente corrente = new ContaCorrente();
 		ContaSalario salario = new ContaSalario();
 
 		Scanner entrada = new Scanner(System.in);
@@ -70,15 +67,19 @@ public class ContaScannerApp {
 			System.out.println("Depositar :");
 			double valo2 = valor1.nextDouble();
 			salario2.depositarSalario(salario.getSaldo(), valo2);
+			System.out.println(salario.getSaldo());
 			System.out.println("Parabéns pelo seu Depostio !:R$"+salario2.getSaldo());
 
 			valor1.close();
 			break;
 		case 4:
+			Pessoa pessoa = new Pessoa();
 			System.out.println("Conta Pessoa Fisica");
 			System.out.println("Digite o nome ?");
 			System.out.println("Idade ?");
 			System.out.println("Rg ?");
+			
+			System.out.println(pessoa.getNome()+ pessoa.getIdade()+ pessoa.getRg());
 			break;
 
 		case 5:

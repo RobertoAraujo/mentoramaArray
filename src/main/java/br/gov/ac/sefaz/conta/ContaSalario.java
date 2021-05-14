@@ -23,5 +23,11 @@ public class ContaSalario extends Conta{
 			super.setSaldo(resultado);
 		}
 	}
+	
+	public void transferir(double saldo, double valor) {
+			resultado = (saldo - valor);
+			super.setSaldo(resultado);
+		
+	}
 
 }

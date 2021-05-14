@@ -17,6 +17,19 @@ public class ArrayAlunosMatrizes {
 				System.out.print(string);
 			}
 		}
+		/*
+		System.out.println();
+		
+		Iterator<String> aprovados = ausentes.iterator();
+		while (aprovados.hasNext()) {			
+			System.out.println(aprovados.next());
+		}
+		
+		System.out.println();
+		
+		Stream<String> stream = ausentes.stream();
+		stream.forEach(System.out::println);
+	*/	
 		
 	}
 }

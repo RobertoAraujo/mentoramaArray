@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 import br.gov.ac.sefaz.cliente.Pessoa;
 import br.gov.ac.sefaz.cliente.PessoaFisca;
+import br.gov.ac.sefaz.conta.ContaCorrente;
 import br.gov.ac.sefaz.conta.ContaSalario;
 
 public class ContaScannerApp {
@@ -35,6 +36,7 @@ public class ContaScannerApp {
 			System.out.println();
 			System.out.println(val);
 			break;
+			
 		case 2:
 			Scanner valor = new Scanner(System.in);
 			ContaSalario salario1 = new ContaSalario();
@@ -53,6 +55,7 @@ public class ContaScannerApp {
 
 			valor.close();
 			break;
+			
 		case 3:
 			Scanner valor1 = new Scanner(System.in);
 			ContaSalario salario2 = new ContaSalario();
@@ -72,6 +75,7 @@ public class ContaScannerApp {
 
 			valor1.close();
 			break;
+			
 		case 4:
 			Pessoa pessoa = new Pessoa();
 			System.out.println("Conta Pessoa Fisica");
@@ -83,7 +87,35 @@ public class ContaScannerApp {
 			break;
 
 		case 5:
-
+			Scanner valoor1 = new Scanner(System.in);
+			ContaCorrente corrente5 = new ContaCorrente();
+			ContaSalario salario5 = new ContaSalario();
+			pessoaF.setNome("Roberto Moraes");
+			pessoaF.setIdade("30");
+			pessoaF.setRg("12134567-8");
+			pessoaF.setCpf("000.000.000-00");
+			corrente5.setAg("1234-5");
+			corrente5.setConta("0001245-7");
+			corrente5.setSaldo(58.45);
+			
+			pessoaF.setNome("Roberto Moraes");
+			pessoaF.setIdade("30");
+			pessoaF.setRg("12134567-8");
+			pessoaF.setCpf("000.000.000-00");
+			salario5.setAg("1234-5");
+			salario5.setConta("0001245-7");
+			salario5.setSaldo(58.45);
+			
+			System.out.println("Saldo da conta Corrente"+corrente5.getSaldo());
+			System.out.println("Saldo da conta Salario"+salario5.getSaldo());
+			
+			System.out.println("Transferir :");
+			double transf = valoor1.nextDouble();
+			salario5.transferir(salario5.getSaldo(), transf);
+			
+			System.out.println("Saldo da conta Corrente"+ (corrente5.getSaldo()+ transf));
+			
+			
 			break;
 
 		case 6:

@@ -6,7 +6,7 @@ public class ContaSalario extends Conta{
 	public void sacarSalario(double saldo, double valor) {
 		if (saldo < valor) {
 			System.out.println("Saldo Insuficiente !!");
-		} if(valor < 500) {
+		} if(saldo != saldo && valor < 500) {
 			System.out.println("Limite de saque de R$ 250,00 por dia !!");
 		}
 		else {

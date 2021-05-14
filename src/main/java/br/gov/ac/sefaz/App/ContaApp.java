@@ -42,7 +42,14 @@ public class ContaApp {
 		+pessoaF.getCpf());
 		System.out.println(" AG: "+salario.getAg()+" CC: "+salario.getConta()+" Saldo Atual : R$ "+salario.getSaldo());
 		
+		System.out.println();
 		salario.depositarSalario(750, salario.getSaldo());
+		System.out.println("Valor é :"+salario.getSaldo());
+
+		System.out.println();
+		System.out.println("inserido ");
+		salario.sacarSalario(salario.getSaldo(), 30.00);
+		System.out.println("Valor agora é : "+salario.getSaldo());
 	}
 
 }

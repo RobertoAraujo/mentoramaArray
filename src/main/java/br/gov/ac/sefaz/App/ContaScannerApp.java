@@ -70,7 +70,7 @@ public class ContaScannerApp {
 			System.out.println("Depositar :");
 			double valo2 = valor1.nextDouble();
 			salario2.depositarSalario(salario.getSaldo(), valo2);
-			System.out.println("Parabéns pelo seu Depostio !:R$"salario2.getSaldo());
+			System.out.println("Parabéns pelo seu Depostio !:R$"+salario2.getSaldo());
 
 			valor1.close();
 			break;

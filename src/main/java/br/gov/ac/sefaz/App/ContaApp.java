@@ -1,16 +1,15 @@
 package br.gov.ac.sefaz.App;
 
-import br.gov.ac.sefaz.banco.Conta;
 import br.gov.ac.sefaz.banco.ContaCorrente;
 import br.gov.ac.sefaz.banco.ContaSalario;
 import br.gov.ac.sefaz.banco.PessoaFisca;
+import br.gov.ac.sefaz.banco.PessoaJuridica;
 
 public class ContaApp {
 
 	public static void main(String[] args) {
 		PessoaFisca pessoaF = new  PessoaFisca();
-		//PessoaJuridica pessoaJ = new PessoaJuridica();
-		Conta conta = new Conta();
+		PessoaJuridica pessoaJ = new PessoaJuridica();
 		ContaCorrente corrente =new  ContaCorrente();
 		ContaSalario salario = new ContaSalario();
 		
@@ -42,7 +41,9 @@ public class ContaApp {
 		+pessoaF.getCpf());
 		System.out.println(" AG: "+salario.getAg()+" CC: "+salario.getConta()+" Saldo Atual : R$ "+salario.getSaldo());
 		
+		
 		System.out.println();
+		/*
 		salario.depositarSalario(750, salario.getSaldo());
 		System.out.println("Valor é :"+salario.getSaldo());
 
@@ -50,6 +51,20 @@ public class ContaApp {
 		System.out.println("inserido ");
 		salario.sacarSalario(salario.getSaldo(), 30.00);
 		System.out.println("Valor agora é : "+salario.getSaldo());
+		*/
+		
+		pessoaJ.setNome("Bruno Moraes");
+		pessoaJ.setIdade("32");
+		pessoaJ.setRg("12134567-7");
+		pessoaJ.setCnpj("10.050.010/0001-10");
+		corrente.setAg("8237-5");
+		corrente.setConta("0008245-8");
+		corrente.setSaldo(58.45);
+		corrente.sacarCorrente(corrente.getSaldo(), 300.0);
+		
+		System.out.println("Dados Conta :"+pessoaJ.getNome()+" "+pessoaJ.getIdade()+" "+pessoaJ.getRg()+" "
+				+pessoaJ.getCnpj());
+				System.out.println(" AG: "+corrente.getAg()+" CC: "+corrente.getConta()+" Saldo Atual : R$ "+corrente.getSaldo());
 	}
 
 }

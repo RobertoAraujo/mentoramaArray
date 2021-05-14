@@ -2,8 +2,18 @@ package br.gov.ac.sefaz.App;
 
 import java.util.Scanner;
 
+import br.gov.ac.sefaz.cliente.PessoaFisca;
+import br.gov.ac.sefaz.cliente.PessoaJuridica;
+import br.gov.ac.sefaz.conta.ContaCorrente;
+import br.gov.ac.sefaz.conta.ContaSalario;
+
 public class ContaScannerApp {
 	public static void main(String[] args) {
+		PessoaFisca pessoaF = new  PessoaFisca();
+		PessoaJuridica pessoaJ = new PessoaJuridica();
+		ContaCorrente corrente =new  ContaCorrente();
+		ContaSalario salario = new ContaSalario();
+		
 		Scanner entrada = new Scanner(System.in);
 		
 		System.out.println("***** Banco Mentorama ** R$ **************");
@@ -19,6 +29,25 @@ public class ContaScannerApp {
 		
 		System.out.println("Digita sua Opção : ");
 		int opcao = entrada.nextInt();
+		
+		switch (opcao) {
+		case 1:
+			System.out.println("Conta Pessoa Fisica");
+				System.out.println("Digite o nome ?");
+				System.out.println("Idade ?");
+				System.out.println("Rg ?");
+			break;
+
+		case 2:
+			ContaSalario salario1 = new ContaSalario();
+			Scanner valor = new Scanner(System.in);
+			double val = valor.nextDouble();
+			System.out.println("Sacar :");
+			salario1.sacarSalario(salario.getSaldo(), val);
+			break;
+		default:
+			break;
+		}
 		
 		entrada.close();
 	}

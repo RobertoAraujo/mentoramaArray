@@ -3,9 +3,11 @@ package br.gov.ac.sefaz.cliente;
 import java.util.Objects;
 
 public class Pessoa {
+	
 	String nome;
 	String idade;
 	String rg;
+	
 	public String getNome() {
 		return nome;
 	}

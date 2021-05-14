@@ -1,7 +1,10 @@
 package br.gov.ac.sefaz.App;
 
+import java.util.Scanner;
+
 public class ContaScannerApp {
 	public static void main(String[] args) {
+		Scanner entrada = new Scanner(System.in);
 		
 		System.out.println("***** Banco Mentorama ** R$ **************");
 		System.out.println("Menu de Opção para você Cliente amigo !");
@@ -13,5 +16,10 @@ public class ContaScannerApp {
 		System.out.println(" 6 - Mostrar montante disponivel nas contas");
 		System.out.println(" 7 - sair");
 		System.out.println(" Escolha a opção desejada :");
+		
+		System.out.println("Digita sua Opção : ");
+		int opcao = entrada.nextInt();
+		
+		entrada.close();
 	}
 }

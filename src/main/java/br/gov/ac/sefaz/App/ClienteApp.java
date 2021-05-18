@@ -42,6 +42,9 @@ public class ClienteApp {
 		vend.add(new Venda(produtos.get(4), cliente.get(9)));
 		vend.add(new Venda(produtos.get(4), cliente.get(3)));
 		
+		for (Venda venda : vend) {
+			System.out.println(venda.toString());
+		}
 		
 		int min = 1000000000, max = 0;
 		for (Cliente c : cliente) {

@@ -5,13 +5,12 @@ import java.util.Scanner;
 
 import br.gov.ac.sefaz.conta.ContaCorrente;
 import br.gov.ac.sefaz.conta.ContaSalario;
-import br.gov.ac.sefaz.pessoa.Pessoa;
 import br.gov.ac.sefaz.pessoa.PessoaFisca;
 
 public class ContaMenuApp {
 	public static void main(String[] args) {
 		PessoaFisca pessoaF = new PessoaFisca();
-		ContaSalario salario = new ContaSalario();
+		//ContaSalario salario = new ContaSalario();
 
 		Scanner entrada = new Scanner(System.in);
 
@@ -149,7 +148,7 @@ public class ContaMenuApp {
 			Scanner nomeEntrada = new Scanner(System.in);
 			Scanner idadeEntrada = new Scanner(System.in);
 			Scanner rgEntrada = new Scanner(System.in);
-			Pessoa pessoa = new Pessoa();
+			//Pessoa pessoa = new Pessoa();
 			System.out.println("Conta Pessoa Fisica");
 			String CPf = contaEntrada.next();
 			System.out.println("Digite o nome ?");

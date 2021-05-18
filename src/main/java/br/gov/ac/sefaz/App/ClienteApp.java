@@ -1,16 +1,12 @@
 package br.gov.ac.sefaz.App;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 
 import br.gov.ac.sefaz.cliente.Cliente;
 import br.gov.ac.sefaz.cliente.Produtos;
 import br.gov.ac.sefaz.cliente.Venda;
 
 public class ClienteApp {
-	
-	static int min = 1000000000;
-	static int max = 0;
 	
 	public static void main(String[] args) {
 
@@ -38,32 +34,29 @@ public class ClienteApp {
 		vend.add(new Venda(produtos.get(1), cliente.get(7)));
 		vend.add(new Venda(produtos.get(1), cliente.get(7)));
 		vend.add(new Venda(produtos.get(2), cliente.get(7)));
-		vend.add(new Venda(produtos.get(0), cliente.get(1)));
-		vend.add(new Venda(produtos.get(0), cliente.get(1)));
+		vend.add(new Venda(produtos.get(1), cliente.get(1)));
+		vend.add(new Venda(produtos.get(3), cliente.get(1)));
 		vend.add(new Venda(produtos.get(3), cliente.get(2)));
-		vend.add(new Venda(produtos.get(3), cliente.get(5)));
-		vend.add(new Venda(produtos.get(0), cliente.get(7)));
+		vend.add(new Venda(produtos.get(4), cliente.get(5)));
+		vend.add(new Venda(produtos.get(3), cliente.get(7)));
 		vend.add(new Venda(produtos.get(4), cliente.get(9)));
 		vend.add(new Venda(produtos.get(4), cliente.get(3)));
 		
 		
-		//int min = 1000000000, max = 0;
-
+		int min = 1000000000, max = 0;
 		for (Cliente c : cliente) {
 			System.out.println(c.getNome() + " = " + quantidade(vend, c.getId()));
-			
 			if(quantidade(vend, c.getId()) < min ) {
 				min = quantidade(vend, c.getId());
 			}
-			
 			if(quantidade(vend, c.getId()) > max) {
 				max = quantidade(vend, c.getId());
 			}
 			
 		}
 		
-		System.out.println(cliente.get(max)+"max = " + max);
-		System.out.println(cliente.get(min)+"min = " + min);
+		System.out.println("max = " + max);
+		System.out.println("min = " + min);
 		
 	}
 

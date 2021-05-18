@@ -29,5 +29,11 @@ public class ContaSalario extends Conta{
 			super.setSaldo(resultado);
 		
 	}
+	public void montanteSalario(double saldo, double valor) {
+		double montante = 0.70;
+		resultado = montante * (saldo - valor);
+		super.setSaldo(resultado);
+	
+}
 
 }

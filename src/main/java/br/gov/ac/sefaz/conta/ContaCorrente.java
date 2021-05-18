@@ -19,4 +19,11 @@ public class ContaCorrente extends Conta {
 			super.setSaldo(resultado);
 		}
 	}
+	
+	public void montanteCorrente(double saldo, double valor) {
+		double montante = 0.70;
+		resultado = montante * (saldo * 10);
+		super.setSaldo(resultado);
+
+	}
 }

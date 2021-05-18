@@ -194,7 +194,17 @@ public class ContaMenuApp {
 			break;
 
 		case 6:
-
+			ContaCorrente corrente6 = new ContaCorrente();
+			
+			pessoaF.setNome("Roberto Moraes");
+			pessoaF.setIdade("30");
+			pessoaF.setRg("12134567-8");
+			pessoaF.setCpf("000.000.000-00");
+			corrente6.setAg("1234-5");
+			corrente6.setConta("0001245-7");
+			corrente6.setSaldo(58.45);
+			corrente6.montanteCorrente(corrente6.getSaldo(), 50);
+			System.out.println(corrente6.getSaldo());
 			break;
 
 		default:

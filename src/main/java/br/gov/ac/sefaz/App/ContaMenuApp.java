@@ -93,6 +93,7 @@ public class ContaMenuApp {
 
 			default:
 				if(opcao >= 5) {
+					
 					System.out.println("opa numero fora da opção :");
 				}
 				break;
@@ -144,13 +145,21 @@ public class ContaMenuApp {
 			break;
 
 		case 4:
+			Scanner contaEntrada = new Scanner(System.in);
+			Scanner nomeEntrada = new Scanner(System.in);
+			Scanner idadeEntrada = new Scanner(System.in);
+			Scanner rgEntrada = new Scanner(System.in);
 			Pessoa pessoa = new Pessoa();
 			System.out.println("Conta Pessoa Fisica");
+			String CPf = contaEntrada.next();
 			System.out.println("Digite o nome ?");
+			String nomecont = nomeEntrada.next();
 			System.out.println("Idade ?");
+			String idade = idadeEntrada.next();
 			System.out.println("Rg ?");
+			String rg = rgEntrada.next();
 
-			System.out.println(pessoa.getNome() + pessoa.getIdade() + pessoa.getRg());
+			System.out.println(" "+ CPf +" "+ nomecont+" "+ idade+" "+rg);
 			break;
 
 		case 5:

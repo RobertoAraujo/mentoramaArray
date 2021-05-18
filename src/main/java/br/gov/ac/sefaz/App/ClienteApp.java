@@ -1,46 +1,76 @@
 package br.gov.ac.sefaz.App;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 import br.gov.ac.sefaz.cliente.Cliente;
 import br.gov.ac.sefaz.cliente.Produtos;
+import br.gov.ac.sefaz.cliente.Venda;
 
 public class ClienteApp {
-
-	public static void main(String[] args) {
-		Cliente clientes = new  Cliente();
-		Produtos produts = new Produtos();
-		ArrayList<Produtos> produtos = new ArrayList<Produtos>();
-		
-		clientes.setId(1);
-		clientes.setNome("Roberto Moraes0  ");
-		produts.setNome("Biscoito nestle0");
-		produts.setValor(6.50);
-		
-		System.out.println(clientes.getNome() + produts.getNome() +" R$ "+produts.getValor());
-		
-		
-		Cliente clientes1 = new  Cliente();
-		Produtos produts1 = new Produtos();
-		clientes1.setId(2);
-		clientes1.setNome("Roberto Moraes1  ");
-		produts1.setId(2);
-		produts1.setNome("Biscoito nestle1");
-		produts1.setValor(0.55);
 	
-		
-		System.out.println(clientes1.getNome() + produts1.getNome() +" R$ "+produts1.getValor());
-		
-		Cliente clientes2 = new  Cliente();
-		Produtos produts2 = new Produtos();
-		clientes2.setId(2);
-		clientes2.setNome("Roberto Moraes2  ");
-		produts2.setId(2);
-		produts2.setNome("Biscoito nestle2");
-		produts2.setValor(5.50);
-		
-		System.out.println(clientes2.getNome() + produts2.getNome() +" R$ "+produts2.getValor());
+	static int min = 1000000000;
+	static int max = 0;
+	
+	public static void main(String[] args) {
 
+		ArrayList<Produtos> produtos = new ArrayList<Produtos>();
+		produtos.add(new Produtos(1, "biscoito1", 250));
+		produtos.add(new Produtos(2, "biscoito2", 50));
+		produtos.add(new Produtos(3, "biscoito3", 20));
+		produtos.add(new Produtos(4, "biscoito4", 10));
+		produtos.add(new Produtos(5, "biscoito5", 0.25));
+
+		ArrayList<Cliente> cliente = new ArrayList<Cliente>();
+		cliente.add(new Cliente(1, "Bruno Bolino1"));
+		cliente.add(new Cliente(2, "Bruno Bolino2"));
+		cliente.add(new Cliente(3, "Bruno Bolino3"));
+		cliente.add(new Cliente(4, "Bruno Bolino4"));
+		cliente.add(new Cliente(5, "Bruno Bolino5"));
+		cliente.add(new Cliente(6, "Bruno Bolino6"));
+		cliente.add(new Cliente(7, "Bruno Bolino7"));
+		cliente.add(new Cliente(8, "Bruno Bolino8"));
+		cliente.add(new Cliente(9, "Bruno Bolino9"));
+		cliente.add(new Cliente(10, "Bruno Bolino10"));
+
+		ArrayList<Venda> vend = new ArrayList<Venda>();
+
+		vend.add(new Venda(produtos.get(1), cliente.get(7)));
+		vend.add(new Venda(produtos.get(1), cliente.get(7)));
+		vend.add(new Venda(produtos.get(2), cliente.get(7)));
+		vend.add(new Venda(produtos.get(0), cliente.get(1)));
+		vend.add(new Venda(produtos.get(0), cliente.get(1)));
+		vend.add(new Venda(produtos.get(3), cliente.get(2)));
+		vend.add(new Venda(produtos.get(3), cliente.get(5)));
+		vend.add(new Venda(produtos.get(0), cliente.get(7)));
+		vend.add(new Venda(produtos.get(4), cliente.get(9)));
+		vend.add(new Venda(produtos.get(4), cliente.get(3)));
+		
+		
+		//int min = 1000000000, max = 0;
+
+		for (Cliente c : cliente) {
+			System.out.println(c.getNome() + " = " + quantidade(vend, c.getId()));
+			
+			if(quantidade(vend, c.getId()) < min ) {
+				min = quantidade(vend, c.getId());
+			}
+			
+			if(quantidade(vend, c.getId()) > max) {
+				max = quantidade(vend, c.getId());
+			}
+			
+		}
+		
+		System.out.println(cliente.get(max)+"max = " + max);
+		System.out.println(cliente.get(min)+"min = " + min);
+		
+	}
+
+	public static int quantidade(ArrayList<Venda> vendas, int param) {
+		int cont = 0;
+		for (Venda venda : vendas) {if (venda.cliente.getId() == param) {cont++;}}
+		return cont;
 	}
 
 }

@@ -12,6 +12,14 @@ public class Produtos implements Serializable{
 	String nome;
 	double valor;
 	
+	
+	
+	public Produtos(int id, String nome, double valor) {
+		this.id = id;
+		this.nome = nome;
+		this.valor = valor;
+	}
+	
 	public int getId() {
 		return id;
 	}

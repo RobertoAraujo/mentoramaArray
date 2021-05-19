@@ -7,7 +7,7 @@ import br.gov.ac.sefaz.cliente.Produtos;
 import br.gov.ac.sefaz.cliente.Venda;
 
 public class ClienteApp {
-	
+
 	public static void main(String[] args) {
 
 		ArrayList<Produtos> produtos = new ArrayList<Produtos>();
@@ -41,32 +41,37 @@ public class ClienteApp {
 		vend.add(new Venda(produtos.get(3), cliente.get(7)));
 		vend.add(new Venda(produtos.get(4), cliente.get(9)));
 		vend.add(new Venda(produtos.get(4), cliente.get(3)));
-		
+
 		for (Venda venda : vend) {
 			System.out.println(venda.toString());
 		}
-		
+
 		int min = 1000000000, max = 0;
 		for (Cliente c : cliente) {
 			System.out.println(c.getNome() + " = " + quantidade(vend, c.getId()));
-			if(quantidade(vend, c.getId()) < min ) {
+			if (quantidade(vend, c.getId()) < min) {
 				min = quantidade(vend, c.getId());
 			}
-			if(quantidade(vend, c.getId()) > max) {
+			if (quantidade(vend, c.getId()) > max) {
 				max = quantidade(vend, c.getId());
 			}
-			
+
 		}
-		
-		System.out.println("max = " + max);
+
+		System.out.println( "max = " + max);
 		System.out.println("min = " + min);
-		
+
 	}
 
 	public static int quantidade(ArrayList<Venda> vendas, int param) {
 		int cont = 0;
-		for (Venda venda : vendas) {if (venda.cliente.getId() == param) {cont++;}}
+		for (Venda venda : vendas) {
+			if (venda.cliente.getId() == param) {
+				cont++;
+			}
+		}
 		return cont;
 	}
+	
 
 }

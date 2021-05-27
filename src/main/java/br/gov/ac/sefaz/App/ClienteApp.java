@@ -34,10 +34,10 @@ public class ClienteApp {
 		vend.add(new Venda(produtos.get(1), cliente.get(7)));
 		vend.add(new Venda(produtos.get(1), cliente.get(7)));
 		vend.add(new Venda(produtos.get(2), cliente.get(7)));
-		vend.add(new Venda(produtos.get(1), cliente.get(1)));
+		vend.add(new Venda(produtos.get(1), cliente.get(7)));
 		vend.add(new Venda(produtos.get(3), cliente.get(1)));
 		vend.add(new Venda(produtos.get(3), cliente.get(2)));
-		vend.add(new Venda(produtos.get(4), cliente.get(5)));
+		vend.add(new Venda(produtos.get(4), cliente.get(7)));
 		vend.add(new Venda(produtos.get(3), cliente.get(7)));
 		vend.add(new Venda(produtos.get(4), cliente.get(9)));
 		vend.add(new Venda(produtos.get(4), cliente.get(3)));
@@ -46,6 +46,19 @@ public class ClienteApp {
 			//System.out.println(venda.toString());
 		//}
 
+		/*int maior = Integer.MIN_VALUE;
+		int indiceMaior = -1;
+		for (int i = 0; i < vend.size(); i++) {
+		    if (cliente.size() > maior) {
+		        maior = cliente.size();
+		        indiceMaior = i;
+		    }
+		}
+		
+		System.out.printf("Maior número é %d, no índice %d", maior, indiceMaior);
+		*/
+		
+		
 		int min = 1000000000, max = 0;
 		for (Cliente c : cliente) {
 			System.out.println(c.getNome() + " = " + quantidade(vend, c.getId()));
@@ -70,7 +83,9 @@ public class ClienteApp {
 				cont++;
 			}
 		}
+	
 		return cont;
+		
 	}
 	
 
